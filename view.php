@@ -142,6 +142,13 @@ if (!$downloadown && !$downloadissue) {
         $downloadbutton = new single_button($link, $linkname, 'post', true);
         $downloadbutton->class .= ' m-b-1';  // Seems a bit hackish, ahem.
         $downloadbutton = $OUTPUT->render($downloadbutton);
+        //Core Fix Start
+        if (isset($issue))
+        {
+            require_once $CFG->dirroot.'/local/core/config.php';
+            $downloadbutton .= \local_core\Fix::CustomcertView($issue);
+        }
+        //Core Fix Finish
     }
 
     // Output all the page data.
