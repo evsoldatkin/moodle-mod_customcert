@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 Note - All hash comments refer to the issue number. Eg. #169 refers to https://github.com/mdjnelson/moodle-mod_customcert/issues/169.
 
+## [3.8.6] - 2021-XX-YY
+
+### Added
+- The ability to show the description on the course page (#406).
+- The ability to choose how to deliver the certificate (#401).
+
+### Fixed
+- Managers are now able to download their students' certificates (#412).
+- Users being able to view the certificate before the required time set (#403).
+
 ## [3.8.5] - 2020-11-26
 
 ### Added
