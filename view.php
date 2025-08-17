@@ -165,6 +165,13 @@ if (!$downloadown && !$downloadissue) {
         $downloadbutton = new single_button($link, $linkname, 'get', single_button::BUTTON_PRIMARY);
         $downloadbutton->class .= ' m-b-1';  // Seems a bit hackish, ahem.
         $downloadbutton = $OUTPUT->render($downloadbutton);
+        //Core Fix Start
+        if (isset($issue))
+        {
+            require_once $CFG->dirroot.'/local/core/config.php';
+            $downloadbutton .= \local_core\Fix::CustomcertView($issue);
+        }
+        //Core Fix Finish
         if ($displayreturnbutton) {
             $url = new moodle_url('/course/view.php', ['id' => $course->id]);
             $buttonreturntocourse = new single_button($url, get_string('returncourselabel', 'customcert'), 'get');
